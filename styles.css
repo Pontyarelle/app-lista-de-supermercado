@@ -1,0 +1,214 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do header fixo no topo */
+header {
+    background-color: rgb(0, 117, 250);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Adiciona espaçamento ao topo para o conteúdo não ficar sobreposto ao cabeçalho fixo */
+body {
+    margin: 0;
+    padding-top: 80px; /* Espaço para o cabeçalho fixo */
+}
+
+/* Estilo do formulário de cadastro */
+.lista-cadastro {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+/* Ajusta os inputs para se adaptarem à tela menor */
+.lista-cadastro input[type=text],
+.lista-cadastro input[type=number] {
+    flex: 1 1 100%;
+    height: 40px;
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+/* Ajusta o botão de adicionar */
+.lista-cadastro input[type=submit],
+.lista-cadastro .limpar {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(0, 117, 250);
+    font-weight: bold;
+}
+
+/* Ajusta a cor do botão de Limpar Carrinho */
+.lista-cadastro .limpar {
+    background-color: rgb(250, 0, 0);
+}
+
+/* Estilo da lista de produtos com rolagem */
+.lista-produtos {
+    max-height: 450px; /* Ajuste a altura máxima para exibir 6 itens */
+    overflow-y: auto;
+    margin: 20px;
+    padding-bottom: 60px; /* Espaço para o total fixo */
+}
+
+/* Estilo dos itens da lista de produtos */
+.lista-produtos-single {
+    padding: 10px 0;
+    margin: 20px 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Ajusta os títulos e o preço */
+.lista-produtos-single h3 {
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h3.price-produto {
+    text-align: right;
+    font-size: 18px;
+}
+
+/* Estilo do preço */
+h3.price-produto > span {
+    background-color: rgb(0, 117, 250);
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* Estilo do total fixo na parte inferior */
+.soma-produto {
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(0, 117, 250);
+    color: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Estilo do botão de excluir item */
+.lista-produtos .btn-excluir {
+    background-color: rgb(250, 0, 0); /* Cor vermelha */
+    color: white;
+    border: none;
+    margin-right: 30px;
+    padding: 10px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Adiciona um efeito ao passar o mouse sobre o botão */
+.lista-produtos .btn-excluir:hover {
+    background-color: rgb(200, 0, 0); /* Vermelho mais escuro */
+}
+
+/* Estilo do botão de adicionar item */
+.lista-cadastro input[type=submit] {
+    background-color: rgb(0, 117, 250); /* Cor de fundo padrão */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */
+}
+
+/* Adiciona um efeito ao passar o mouse sobre o botão de adicionar */
+.lista-cadastro input[type=submit]:hover {
+    background-color: rgb(0, 100, 220); /* Cor de fundo ao passar o mouse */
+    transform: scale(1.01); /* Leve aumento de tamanho */
+}
+
+/* Estilo do botão de limpar carrinho */
+.lista-cadastro .limpar {
+    background-color: rgb(250, 0, 0); /* Cor de fundo padrão */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */
+}
+
+/* Adiciona um efeito ao passar o mouse sobre o botão de limpar */
+.lista-cadastro .limpar:hover {
+    background-color: rgb(200, 0, 0); /* Cor de fundo ao passar o mouse */
+    transform: scale(1.01); /* Leve aumento de tamanho */
+}
+
+/* Consultas de mídia para responsividade */
+@media (max-width: 768px) {
+    /* Ajusta a largura dos inputs e botões para telas menores */
+    .lista-cadastro input[type=text],
+    .lista-cadastro input[type=number],
+    .lista-cadastro input[type=submit],
+    .lista-cadastro .limpar {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .lista-produtos-single {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lista-produtos-single h3 {
+        margin: 10px 0;
+    }
+    .lista-produtos .btn-excluir {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .lista-cadastro {
+        padding: 10px;
+    }
+
+    .soma-produto {
+        font-size: 16px;
+    }
+}
+
